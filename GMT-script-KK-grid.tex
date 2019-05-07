@@ -1,0 +1,14 @@
+# Purpose: bathymetry contour from the ETOPO5 grid 5 arc minute global data set (here: Kuril-Kamchatka area)
+# GMT modules: grdcut, grdinfo, grdcontour, logo
+gmt grdcut earth_relief_05m.grd -R140/170/40/60 -Gkkt_relief.nc -V
+gmt grdinfo @kkt_relief.nc
+gmt grdcontour @kkt_relief.nc -R140/170/40/60 -JB155/50/45/55/6.0i -C500 -A1000 -S4 -T+d15p/3p \
+	-B+t"Bathymetry of the Kuril-Kamchatka Trench" -Bxa5f1g2 -Bya2f1g2 \
+	--FONT_ANNOT_PRIMARY=7p,Helvetica,darkblue \
+	--FONT_TITLE=12p,Helvetica,darkblue \
+	--MAP_FRAME_WIDTH=0.08c \
+	--FORMAT_GEO_MAP=dddF \
+	--MAP_GRID_PEN_PRIMARY=thinnest \
+	-P -U \
+	-K > GMT_KKbathy.ps
+gmt logo -R -J -O -Dx6.5/-2.2+o0.1i/0.1i+w2c  >> GMT_KKbathy.ps
