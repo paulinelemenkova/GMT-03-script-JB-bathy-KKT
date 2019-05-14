@@ -1,6 +1,6 @@
 #!/bin/sh
 # Purpose: bathymetry contour from the ETOPO5 grid 5 arc minute global data set (here: Kuril-Kamchatka area)
-# GMT modules: grdcut, grdinfo, grdcontour, psbasemap, pstext, logo
+# GMT modules: grdcut, grdinfo, grdcontour, psbasemap, psxy, logo, pstext
 # Step-1. Generate a file
 ps=GMT_JB_bathy_KKT.ps
 # Step-2. Cut off the grid
